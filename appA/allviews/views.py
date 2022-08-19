@@ -1,13 +1,9 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-=======
 import numpy as np
->>>>>>> first upload
 import pandas as pd
 
 def index(request):
-    file = 1
-    return render(request, 'form.html',{'name':file})
+    return render(request, 'form.html')
 
 def excel(request):
     file = request.FILES.get("excel_file")
@@ -27,9 +23,6 @@ def excel(request):
     mydict = {
         "df": dx.to_html()
     }
-<<<<<<< HEAD
-    return render(request, 'form.html',context=mydict)
-=======
     return render(request, 'form.html',context=mydict)
 
 def indnum(request):
@@ -57,4 +50,3 @@ def numpy(request):
         "df": dx.to_html()
     }
     return render(request, 'forma1.html',context=mydict)
->>>>>>> first upload
