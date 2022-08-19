@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {{df|safe}}
+    <form action="/excel/numpy" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="excel_file">
+        <input type="submit" value="send">
+    </form>
+
+    <div>
+        <p class="text-sm">Average numbers from an excel file using pandas and numpy</p>
+        {% load static %}
+        <a href="{% static 'a1.xls' %}">download excel</a>
+    </div>
+{% endblock %}
